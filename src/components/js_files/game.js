@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import TicTacToe from './ticTacToe';
 import game from '../css_files/game.css'
 import chooseTable from './chooseTable';
-import {Link} from 'react-router-dom'
 import Board from './ticTacToe';
 
 export default class Game extends TicTacToe {
@@ -27,6 +26,7 @@ export default class Game extends TicTacToe {
         const history = this.state.history.slice(0, this.state.stepNumber + 1); 
         const current = history[history.length - 1]; 
         const squares = current.squares.slice(); 
+        console.log(squares)
         const winner = Winner(squares);
         if (winner || squares[i]) {
             return;
@@ -61,7 +61,9 @@ export default class Game extends TicTacToe {
         let status;
         if (winner) {
             status = 'Winner is ' + winner;
-        } else {
+        }
+        
+        else {
             status = 'Next Player is ' + (this.state.xIsNext ? 'X' : 'O');
         }
 
@@ -100,8 +102,8 @@ function Winner(squares) {
         if (squares[a] && squares[a] === squares[b] && squares[b] === squares[c] && squares[c] === squares[d]) {
             return squares[a];
         }
-
     }
+   
 
     return null;
 }
