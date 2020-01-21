@@ -1,0 +1,17 @@
+.goTo{
+    list-style: none;
+}
+.game{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+ul li{
+    margin-left: -35px;
+}
+.playAgain{
+    display: grid;
+    justify-content: start;
+    margin: 50px;
+}
